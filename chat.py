@@ -213,7 +213,7 @@ def debugging():
 def main():
     #load_dotenv()
     st.set_page_config(page_title="DevGenie")
-    st.title("DeviGenie💁 ")
+    st.title("DevGenie💁 ")
     st.subheader("I can help you in Flask App Development")
 
     if "messages" not in st.session_state:
