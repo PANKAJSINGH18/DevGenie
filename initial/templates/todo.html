@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <h1>ToDo List</h1>
+    <ul>
+      {% for todo in todos %}
+        <li>{{ todo.title }} ({{ "Completed" if todo.completed else "Not Completed" }})
+          <form action="{{ url_for('delete_todo', todo_id=todo.id) }}" method="post">
+            <input type="submit" value="Delete">
+          </form>
+          <form action="{{ url_for('complete_todo', todo_id=todo.id) }}" method="post">
+            <input type="submit" value="Complete">
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+    <form action="" method="post">
+      <label for="title">New ToDo:</label>
+      <input type="text" id="title" name="title"><br><br>
+      <input type="submit" value="Add">
+    </form>
+  </body>
+</html>
